@@ -15,14 +15,41 @@ class _DemoWidgetPageState extends State<DemoWidgetPage> {
         title: Text("Demo widget"),
       ),
       body: Container(
-        constraints: BoxConstraints.expand(),
-        child: Column(
-          children: [
-            Expanded(flex: 3,child: Container(color: Colors.red)),
-            Expanded(flex: 1,child: Container(color: Colors.blue))
-          ],
-        ),
-      ),
+          constraints: BoxConstraints.expand(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Flexible(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                          child: Container(color: Colors.red, child: Text("A"))),
+                      Expanded(
+                          child: Container(color: Colors.blue, child: Text("B"))),
+                      Expanded(
+                          child: Container(color: Colors.green, child: Text("C"))),
+                      Expanded(
+                          child: Container(color: Colors.orange, child: Text("D"))),
+                    ])
+              ),
+              Flexible(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                          child: Container(color: Colors.red, child: Text("A"))),
+                      Expanded(
+                          child: Container(color: Colors.blue, child: Text("B"))),
+                      Expanded(
+                          child: Container(color: Colors.green, child: Text("C"))),
+                      Expanded(
+                          child: Container(color: Colors.orange, child: Text("D"))),
+                    ])
+              )
+            ])
+      )
     );
   }
 }
