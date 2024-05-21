@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:statefull_stateless_widget16032024/demo_statefull_widget_page.dart';
+import 'package:statefull_stateless_widget16032024/demo_widget_page.dart';
 
 import 'demo_stateless_widget_page.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: DemoStateFullWidgetPage()
+      home: DemoWidgetPage()
     );
   }
 }
