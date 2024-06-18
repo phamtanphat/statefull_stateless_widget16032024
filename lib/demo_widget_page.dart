@@ -24,7 +24,26 @@ class DemoStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      constraints: BoxConstraints.expand(),
+      child: Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+            border: Border.all()
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+                Container(width: 140, height: 140, color: Colors.red),
+                Container(width: 120, height: 120, color: Colors.blue),
+                Container(width: 100, height: 100, color: Colors.green),
+            ]
+          ),
+        )
+      ),
+    );
   }
 }
 
