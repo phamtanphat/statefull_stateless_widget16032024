@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 
 class DemoWidgetPage extends StatefulWidget {
   const DemoWidgetPage({super.key});
@@ -28,18 +31,25 @@ class DemoStack extends StatelessWidget {
       constraints: BoxConstraints.expand(),
       child: Center(
         child: Container(
+          decoration: BoxDecoration(
+              border: Border.all()
+          ),
           width: 300,
           height: 300,
-          decoration: BoxDecoration(
-            border: Border.all()
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-                Container(width: 140, height: 140, color: Colors.red),
-                Container(width: 120, height: 120, color: Colors.blue),
-                Container(width: 100, height: 100, color: Colors.green),
-            ]
+          child: Center(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                  Positioned(
+                    bottom: -50,
+                    child: Container(
+                        color: Colors.red,
+                        width: 150,
+                        height: 150,
+                    ),
+                  ),
+              ]
+            ),
           ),
         )
       ),
